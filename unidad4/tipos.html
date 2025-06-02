@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.2 Tipos de computación paralela</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="hero" style="height: auto; padding: 2rem 1rem;">
+        <div class="overlay">
+            <h1>4.2 Tipos de computación paralela</h1>
+            <p>Clasificación de las arquitecturas paralelas según sus estructuras y procesamiento.</p>
+        </div>
+    </header>
+
+    <main style="padding: 2rem; text-align: justify;">
+        <h2>Clasificación según Flynn</h2>
+        <p>
+            Michael Flynn propuso una taxonomía para clasificar los tipos de computación paralela según el número de
+            flujos de instrucciones
+            y de datos que procesan los sistemas. Los cuatro modelos principales son:
+        </p>
+
+        <h3>1. SISD (Single Instruction, Single Data)</h3>
+        <p>
+            Es el modelo clásico de cómputo secuencial: un solo procesador ejecuta una sola instrucción sobre un único
+            flujo de datos.
+        </p>
+
+        <h3>2. SIMD (Single Instruction, Multiple Data)</h3>
+        <p>
+            Una sola instrucción es ejecutada simultáneamente sobre múltiples datos. Ideal para procesamiento gráfico y
+            aplicaciones vectoriales.
+        </p>
+
+        <h3>3. MISD (Multiple Instruction, Single Data)</h3>
+        <p>
+            Múltiples instrucciones se ejecutan sobre el mismo flujo de datos. Es un modelo poco común, utilizado en
+            sistemas con alta redundancia.
+        </p>
+
+        <h3>4. MIMD (Multiple Instruction, Multiple Data)</h3>
+        <p>
+            Varios procesadores ejecutan instrucciones diferentes sobre conjuntos de datos distintos. Este modelo es el
+            más flexible y usado
+            actualmente en multiprocesadores y clusters.
+        </p>
+
+        <img src="../img/unidad4/flynn-taxonomia.png" alt="Taxonomía de Flynn"
+            style="width: 80%; display: block; margin: 2rem auto;" />
+        <!-- Continúa dentro del <main> ya abierto -->
+        <h2>4.2.2 Arquitectura de computadoras secuenciales</h2>
+        <p>
+            Estas arquitecturas ejecutan instrucciones de manera lineal y ordenada, una tras otra. Son las más comunes
+            en computadoras personales y
+            sistemas embebidos. Aunque son eficientes en tareas simples, presentan limitaciones al procesar grandes
+            volúmenes de datos.
+        </p>
+        <img src="../img/unidad4/secuencial.png" alt="Arquitectura secuencial"
+            style="width: 70%; display: block; margin: 2rem auto;" />
+
+        <h2>4.2.3 Arquitectura de computadoras paralelas</h2>
+        <p>
+            Estas computadoras están diseñadas para ejecutar múltiples instrucciones al mismo tiempo, utilizando varios
+            procesadores o núcleos.
+            Se caracterizan por su capacidad de dividir grandes tareas en partes más pequeñas, asignándolas a diferentes
+            unidades de procesamiento.
+        </p>
+        <p>
+            Un ejemplo son los supercomputadores que utilizan decenas o cientos de núcleos para tareas científicas,
+            modelado climático o inteligencia artificial.
+        </p>
+        <img src="../img/unidad4/arquitectura-paralela.png" alt="Computación paralela"
+            style="width: 75%; display: block; margin: 2rem auto;" />
+
+        <h2>4.2.4 Arquitectura de multiprocesadores</h2>
+        <p>
+            Un sistema multiprocesador contiene dos o más procesadores interconectados que comparten la memoria
+            principal. Estos sistemas pueden
+            trabajar en paralelo y son comunes en servidores y estaciones de trabajo. Se dividen en:
+        </p>
+        <ul>
+            <li><strong>Simétricos (SMP):</strong> Todos los procesadores tienen acceso equitativo a la memoria.</li>
+            <li><strong>Asimétricos (AMP):</strong> Un procesador controla el sistema y asigna tareas a los demás.</li>
+        </ul>
+        <img src="../img/unidad4/multiprocesador.png" alt="Arquitectura multiprocesador"
+            style="width: 70%; display: block; margin: 2rem auto;" />
+
+        <h2>4.2.5 Sistemas distribuidos</h2>
+        <p>
+            Los sistemas distribuidos consisten en múltiples computadoras independientes que colaboran entre sí para
+            ejecutar tareas. A diferencia
+            de los multiprocesadores, cada nodo tiene su propia memoria y sistema operativo. Se comunican mediante redes
+            para alcanzar un objetivo común.
+        </p>
+        <p>
+            Son utilizados ampliamente en la nube, plataformas web a gran escala y sistemas financieros distribuidos.
+        </p>
+        <img src="../img/unidad4/sistemas-distribuidos.png" alt="Sistemas distribuidos"
+            style="width: 80%; display: block; margin: 2rem auto;" />>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="../index.html" class="scroll-button" style="text-decoration: none;">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../img/logo-tec.png" alt="Logo ITS" />
+        <p>Yoshio Alberto González Padilla</p>
+        <p>Contacto: <a href="mailto:l22051257@saltillo.tecnm.mx">l22051257@saltillo.tecnm.mx</a></p>
+        <p>&copy; 2025 - Instituto Tecnológico de Saltillo</p>
+    </footer>
+</body>
+
+</html>

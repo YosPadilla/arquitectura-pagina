@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.1 Modelos de arquitecturas de cómputo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="hero" style="height: auto; padding: 2rem 1rem;">
+        <div class="overlay">
+            <h1>1.1 Modelos de arquitecturas de cómputo</h1>
+            <p>Modelos fundamentales que definen el diseño lógico y físico de los sistemas computacionales.</p>
+        </div>
+    </header>
+
+    <main style="padding: 2rem; text-align: justify;">
+        <h2>1.1 Modelos de arquitecturas de cómputo</h2>
+
+        <h3>1.1.1 Clásicas</h3>
+        <p>
+            Las arquitecturas clásicas son el punto de partida en el estudio de sistemas de cómputo. Dos de las más
+            influyentes son la arquitectura de Von Neumann y la arquitectura Harvard.
+        </p>
+        <ul>
+            <li><strong>Von Neumann:</strong> En este modelo, la memoria es compartida para instrucciones y datos, lo
+                que simplifica el diseño. Sin embargo, presenta un cuello de botella al no poder acceder simultáneamente
+                a ambos.</li>
+            <li><strong>Harvard:</strong> Separa físicamente la memoria de datos y de instrucciones, permitiendo el
+                acceso paralelo, lo que mejora el rendimiento en sistemas embebidos o DSP.</li>
+        </ul>
+        <img src="../img/unidad1/von-neumann.png" alt="Arquitectura Von Neumann"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <h3>1.1.2 Segmentadas</h3>
+        <p>
+            La arquitectura segmentada o "pipeline" divide el procesamiento de instrucciones en etapas (como búsqueda,
+            decodificación, ejecución, etc.). Esto permite que varias instrucciones se procesen simultáneamente,
+            mejorando la eficiencia del sistema.
+        </p>
+        <p>
+            Por ejemplo, mientras una instrucción está siendo ejecutada, otra puede estar siendo decodificada y una
+            tercera buscada. Este diseño es común en procesadores modernos.
+        </p>
+        <img src="../img/unidad1/segmentada.png" alt="Ejemplo de Pipeline"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <h3>1.1.3 De multiprocesamiento</h3>
+        <p>
+            Los sistemas de multiprocesamiento utilizan múltiples unidades de procesamiento para realizar tareas
+            simultáneamente. Pueden ser:
+        </p>
+        <ul>
+            <li><strong>SMP (Simétrico):</strong> Todos los procesadores tienen acceso equitativo a la memoria y al
+                sistema operativo.</li>
+            <li><strong>AMP (Asimétrico):</strong> Cada procesador puede tener una función específica o ejecutar
+                distintos sistemas.</li>
+        </ul>
+        <p>
+            Este tipo de arquitectura es clave en servidores, supercomputadoras y sistemas de alto rendimiento,
+            permitiendo ejecutar procesos en paralelo con mayor velocidad.
+        </p>
+        <img src="../img/unidad1/multiprocesamiento.png" alt="Arquitectura de Multiprocesamiento"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="../index.html" class="scroll-button" style="text-decoration: none;">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../img/logo-tec.png" alt="Logo ITS" />
+        <p>Yoshio Alberto González Padilla</p>
+        <p>Contacto: <a href="mailto:l22051257@saltillo.tecnm.mx">l22051257@saltillo.tecnm.mx</a></p>
+        <p>&copy; 2025 - Instituto Tecnológico de Saltillo</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.3 Niveles de paralelismo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="hero" style="height: auto; padding: 2rem 1rem;">
+        <div class="overlay">
+            <h1>4.3 Niveles de paralelismo</h1>
+            <p>Exploración de las diferentes formas de implementar procesamiento paralelo.</p>
+        </div>
+    </header>
+
+    <main style="padding: 2rem; text-align: justify;">
+        <h2>4.3.1 Sistemas de memoria compartida</h2>
+        <p>
+            En este tipo de sistemas, múltiples procesadores comparten una única memoria principal. Todos los núcleos
+            pueden acceder a las mismas direcciones de memoria, lo que permite una comunicación rápida entre procesos.
+            Son ideales para aplicaciones que requieren un alto grado de colaboración entre tareas.
+        </p>
+        <p>
+            Este modelo requiere mecanismos de sincronización como semáforos o exclusión mutua (mutex) para evitar
+            conflictos cuando varios procesadores intentan acceder o modificar los mismos datos simultáneamente.
+        </p>
+        <img src="../img/unidad4/memoria-compartida.png" alt="Sistema de memoria compartida"
+            style="width: 80%; display: block; margin: 2rem auto;" />
+
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Comunicación rápida entre procesadores.</li>
+            <li>Facilidad de programación en comparación con memoria distribuida.</li>
+            <li>No requiere paso de mensajes explícitos.</li>
+        </ul>
+
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Escalabilidad limitada debido a la contención de acceso a la memoria.</li>
+            <li>Riesgo de condiciones de carrera si no se maneja adecuadamente la sincronización.</li>
+        </ul>
+
+        <h3>Ejemplo</h3>
+        <p>
+            Un servidor con varios núcleos de CPU que ejecuta múltiples hilos de una misma aplicación, donde todos
+            acceden a una base de datos en memoria RAM compartida.
+        </p>
+        <img src="../img/unidad4/memoria-compartida-esquema.png" alt="Ejemplo de memoria compartida"
+            style="width: 70%; display: block; margin: 2rem auto;" />
+        <h2>4.3.2 Sistemas de memoria distribuida</h2>
+        <p>
+            A diferencia de los sistemas de memoria compartida, en este modelo cada procesador tiene su propia memoria
+            local. Para que los procesadores intercambien datos, deben hacerlo a través de mecanismos de comunicación
+            como el paso de mensajes (message passing).
+        </p>
+        <p>
+            Este tipo de sistemas es común en arquitecturas de clústeres y supercomputadoras donde los nodos están
+            conectados por redes de alta velocidad. Su escalabilidad es mayor, ya que al distribuir la memoria se reduce
+            la contención por el acceso a datos.
+        </p>
+        <img src="../img/unidad4/memoria-distribuida.png" alt="Sistema de memoria distribuida"
+            style="width: 80%; display: block; margin: 2rem auto;" />
+
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Alta escalabilidad, ideal para sistemas masivos.</li>
+            <li>No hay contención directa por acceso a memoria.</li>
+            <li>Se adapta bien a entornos distribuidos como la nube.</li>
+        </ul>
+
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Complejidad en la programación y sincronización.</li>
+            <li>Mayor latencia en la comunicación entre nodos.</li>
+            <li>Requiere protocolos de paso de mensajes.</li>
+        </ul>
+
+        <h3>Ejemplo</h3>
+        <p>
+            Un sistema de cómputo en clúster, donde cada servidor tiene su propio sistema operativo y memoria, y
+            colabora con otros mediante tecnologías como MPI (Message Passing Interface).
+        </p>
+        <img src="../img/unidad4/memoria-distribuida-esquema.png" alt="Esquema de memoria distribuida"
+            style="width: 75%; display: block; margin: 2rem auto;" />
+        <h2>4.3.3 Memoria distribuida compartida</h2>
+        <p>
+            Este modelo híbrido combina elementos de los sistemas de memoria compartida y distribuida. En él, los
+            procesadores pueden tener memoria local (como en el modelo distribuido), pero el sistema está diseñado para
+            que toda la memoria sea accesible globalmente mediante mecanismos de coherencia y virtualización.
+        </p>
+        <p>
+            De esta forma, se logra que los procesos se comuniquen eficientemente sin necesidad de gestionar
+            explícitamente el paso de mensajes, simulando un espacio de memoria compartida global, aunque físicamente
+            esté distribuida.
+        </p>
+
+        <img src="../img/unidad4/memoria-hibrida.png" alt="Sistema de memoria distribuida compartida"
+            style="width: 80%; display: block; margin: 2rem auto;" />
+
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Combina lo mejor de ambos modelos: escalabilidad y facilidad de programación.</li>
+            <li>El sistema puede distribuir dinámicamente los recursos de memoria.</li>
+            <li>Reduce el tiempo de espera por contención directa.</li>
+        </ul>
+
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Mayor complejidad en diseño del sistema operativo y la arquitectura.</li>
+            <li>Requiere mecanismos de coherencia de caché y sincronización más complejos.</li>
+        </ul>
+
+        <h3>Ejemplo</h3>
+        <p>
+            Arquitecturas como NUMA (Non-Uniform Memory Access) donde los procesadores acceden a regiones de memoria con
+            distinta latencia dependiendo de su cercanía física. Se utiliza en servidores multiprocesador modernos.
+        </p>
+
+        <img src="../img/unidad4/memoria-numa.png" alt="Ejemplo NUMA"
+            style="width: 75%; display: block; margin: 2rem auto;" />
+
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="../index.html" class="scroll-button" style="text-decoration: none;">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../img/logo-tec.png" alt="Logo ITS" />
+        <p>Yoshio Alberto González Padilla</p>
+        <p>Contacto: <a href="mailto:l22051257@saltillo.tecnm.mx">l22051257@saltillo.tecnm.mx</a></p>
+        <p>&copy; 2025 - Instituto Tecnológico de Saltillo</p>
+    </footer>
+</body>
+
+</html>

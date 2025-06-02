@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2 Análisis de los componentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="hero" style="height: auto; padding: 2rem 1rem;">
+        <div class="overlay">
+            <h1>1.2 Análisis de los componentes</h1>
+            <p>CPU, Memoria, Entrada/Salida, Buses e Interrupciones.</p>
+        </div>
+    </header>
+
+    <main style="padding: 2rem; text-align: justify;">
+        <<h2>1.2 Análisis de los componentes</h2>
+            <p>Esta sección profundiza en los elementos esenciales que componen una arquitectura de cómputo moderna,
+                desde la unidad central de procesamiento hasta los buses de comunicación e interrupciones del sistema.
+            </p>
+
+            <h3>1.2.1 CPU</h3>
+
+            <h4>1.2.1.1 Arquitecturas</h4>
+            <p>
+                Existen dos tipos predominantes de arquitectura de CPU:
+                <strong>RISC</strong> (Reduced Instruction Set Computer) y <strong>CISC</strong> (Complex Instruction
+                Set Computer). RISC se caracteriza por instrucciones simples y rápidas que requieren múltiples pasos
+                para tareas complejas. CISC utiliza instrucciones más elaboradas, capaces de ejecutar tareas complejas
+                en una sola instrucción. RISC es eficiente en dispositivos móviles, mientras que CISC se mantiene
+                vigente en arquitecturas x86.
+            </p>
+
+            <h4>1.2.1.2 Tipos</h4>
+            <p>
+                Las CPUs pueden clasificarse en:
+            <ul>
+                <li><strong>Mononúcleo:</strong> Procesador con una sola unidad de ejecución.</li>
+                <li><strong>Multinúcleo:</strong> Contiene múltiples núcleos que permiten ejecutar varias instrucciones
+                    simultáneamente.</li>
+                <li><strong>CPU embebidas:</strong> Integradas en dispositivos como microcontroladores,
+                    electrodomésticos, automóviles, etc.</li>
+            </ul>
+            </p>
+
+            <h4>1.2.1.3 Características</h4>
+            <p>
+                Las principales características que definen el desempeño de una CPU son:
+            <ul>
+                <li><strong>Velocidad de reloj:</strong> Medida en GHz, indica cuántos ciclos de instrucciones puede
+                    realizar por segundo.</li>
+                <li><strong>Memoria caché:</strong> Memoria interna ultrarrápida dividida en niveles (L1, L2, L3).</li>
+                <li><strong>Longitud de palabra:</strong> Cantidad de bits que puede procesar simultáneamente.</li>
+                <li><strong>Set de instrucciones:</strong> Conjunto de comandos que puede entender y ejecutar.</li>
+            </ul>
+            </p>
+
+            <h4>1.2.1.4 Funcionamiento (ALU, Unidad de Control, Registros y Buses Internos)</h4>
+            <p>
+                La CPU está compuesta por:
+            <ul>
+                <li><strong>ALU (Unidad Aritmético-Lógica):</strong> Ejecuta operaciones matemáticas y lógicas.</li>
+                <li><strong>Unidad de control:</strong> Coordina el flujo de datos e instrucciones dentro de la CPU.
+                </li>
+                <li><strong>Registros:</strong> Memoria interna de acceso ultrarrápido que almacena temporalmente datos
+                    e instrucciones en ejecución.</li>
+                <li><strong>Buses internos:</strong> Canales de comunicación entre las unidades dentro de la CPU.</li>
+            </ul>
+            </p>
+            <img src="../img/unidad1/cpu-funcionamiento.png" alt="Funcionamiento de la CPU"
+                style="width: 80%; margin: 1rem auto; display: block;" />
+
+            <h3>1.2.2 Memoria</h3>
+
+            <h4>1.2.2.1 Conceptos básicos del manejo de la memoria</h4>
+            <p>
+                La memoria es un componente que almacena datos e instrucciones. Su manejo eficiente determina el
+                rendimiento del sistema. Las operaciones básicas incluyen lectura (read), escritura (write),
+                direccionamiento y temporización de acceso.
+            </p>
+
+            <h4>1.2.2.2 Memoria principal semiconductora</h4>
+            <p>
+                Se refiere a la memoria RAM y ROM construidas con circuitos semiconductores. La RAM (volátil) permite
+                lectura y escritura rápida, mientras que la ROM (no volátil) almacena datos permanentes como el firmware
+                del sistema.
+            </p>
+
+            <h4>1.2.2.3 Memoria caché</h4>
+            <p>
+                Es una memoria intermedia entre la CPU y la RAM que almacena datos e instrucciones usados
+                frecuentemente. Existen niveles jerárquicos: L1 (más rápida, interna al núcleo), L2 (externa al núcleo,
+                pero dentro del chip), y L3 (compartida entre núcleos). Mejora el rendimiento reduciendo el tiempo de
+                acceso a la memoria principal.
+            </p>
+            <img src="../img/unidad1/memoria-cache.png" alt="Jerarquía de memoria caché"
+                style="width: 80%; margin: 1rem auto; display: block;" />
+
+            <h3>1.2.3 Manejo de la entrada/salida</h3>
+
+            <h4>1.2.3.1 Módulos de entrada/salida</h4>
+            <p>
+                Son interfaces que permiten conectar dispositivos periféricos al sistema, como teclados, pantallas,
+                impresoras o sensores. Estos módulos gestionan señales eléctricas, protocolos de comunicación y
+                sincronización de datos.
+            </p>
+
+            <h4>1.2.3.2 Entrada/salida programada</h4>
+            <p>
+                En este modo, el procesador ejecuta instrucciones específicas para controlar los dispositivos. Es
+                simple, pero ineficiente, ya que el procesador debe esperar mientras el dispositivo responde.
+            </p>
+
+            <h4>1.2.3.3 Entrada/salida mediante interrupciones</h4>
+            <p>
+                El periférico interrumpe al procesador cuando necesita atención, liberando al CPU de la espera activa.
+                El sistema responde con una rutina de atención a interrupciones (ISR), lo que mejora la eficiencia
+                general.
+            </p>
+
+            <h4>1.2.3.4 Acceso directo a memoria (DMA)</h4>
+            <p>
+                El controlador DMA transfiere datos entre el periférico y la memoria sin intervención del CPU. Se
+                utiliza en tareas de alto volumen de datos como transferencias de disco o audio.
+            </p>
+
+            <h4>1.2.3.5 Canales y procesadores de entrada/salida</h4>
+            <p>
+                En sistemas de alto rendimiento, se emplean canales de E/S especializados que procesan tareas de
+                entrada/salida independientemente del CPU principal, permitiendo trabajar en paralelo.
+            </p>
+            <img src="../img/unidad1/entrada-salida-avanzada.png" alt="Métodos de Entrada y Salida"
+                style="width: 80%; margin: 1rem auto; display: block;" />
+
+            <h3>1.2.4 Buses</h3>
+
+            <h4>1.2.4.1 Tipos de buses</h4>
+            <p>
+                Los buses se clasifican en:
+            <ul>
+                <li><strong>Bus de datos:</strong> Transporta los datos procesados.</li>
+                <li><strong>Bus de direcciones:</strong> Indica la dirección de memoria o registro a acceder.</li>
+                <li><strong>Bus de control:</strong> Transporta señales de sincronización y control.</li>
+            </ul>
+            </p>
+
+            <h4>1.2.4.2 Estructura de los buses</h4>
+            <p>
+                Los buses pueden ser paralelos (varios bits transmitidos simultáneamente) o seriales (bits enviados
+                secuencialmente). Un bus típico se compone de líneas para cada tipo de señal (datos, control, dirección)
+                y opera bajo protocolos definidos por el chipset.
+            </p>
+
+            <h4>1.2.4.3 Jerarquías de buses</h4>
+            <p>
+                En sistemas complejos, existen jerarquías como el bus del sistema (system bus), bus local (local bus) y
+                buses periféricos (USB, PCI, SATA), que se comunican entre sí mediante puentes lógicos (bridges).
+            </p>
+            <img src="../img/unidad1/estructura-buses.png" alt="Estructura de buses de comunicación"
+                style="width: 80%; margin: 1rem auto; display: block;" />
+
+            <h4>1.2.5 Interrupciones</h4>
+            <p>
+                Las interrupciones son señales que provocan una alteración en el flujo normal del programa para atender
+                eventos urgentes. Pueden ser:
+            </p>
+            <ul>
+                <li><strong>Interrupciones internas (traps):</strong> Generadas por errores del programa (división por
+                    cero, overflow).</li>
+                <li><strong>Interrupciones externas:</strong> Provienen de dispositivos periféricos (teclado, disco,
+                    red).</li>
+            </ul>
+            <p>
+                Cada interrupción está asociada a un vector que redirige la ejecución a una rutina especial llamada ISR
+                (Interrupt Service Routine). El manejo eficiente de interrupciones permite multitarea, respuesta rápida
+                y optimización del rendimiento.
+            </p>
+            <img src="../img/unidad1/interrupciones-vector.png" alt="Proceso de atención a interrupciones"
+                style="width: 80%; margin: 1rem auto; display: block;" />
+
+            </div>
+    </main>
+
+    <footer>
+        <img src="../img/logo-tec.png" alt="Logo ITS" />
+        <p>Yoshio Alberto González Padilla</p>
+        <p>Contacto: <a href="mailto:l22051257@saltillo.tecnm.mx">l22051257@saltillo.tecnm.mx</a></p>
+        <p>&copy; 2025 - Instituto Tecnológico de Saltillo</p>
+    </footer>
+</body>
+
+</html>

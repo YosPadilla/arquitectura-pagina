@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.3 El ciclo de instrucción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="hero" style="height: auto; padding: 2rem 1rem;">
+        <div class="overlay">
+            <h1>2.3 El ciclo de instrucción</h1>
+            <p>Fases de ejecución, segmentación, instrucciones y direccionamiento.</p>
+        </div>
+    </header>
+
+    <main style="padding: 2rem; text-align: justify;">
+        <h2>2.3 El ciclo de instrucción</h2>
+        <p>
+            El ciclo de instrucción describe el proceso mediante el cual el procesador obtiene, interpreta y ejecuta las
+            instrucciones almacenadas en la memoria. Se compone de varias etapas fundamentales que permiten transformar
+            código binario en acciones concretas.
+        </p>
+
+        <h3>2.3.1 Ciclo Fetch-Decode-Execute</h3>
+        <p>
+            El ciclo básico del procesador consta de tres etapas:
+        </p>
+        <ol>
+            <li><strong>Fetch (búsqueda):</strong> Se obtiene la siguiente instrucción desde la memoria, usando el
+                Contador de Programa (PC).</li>
+            <li><strong>Decode (decodificación):</strong> La unidad de control interpreta la instrucción para determinar
+                la operación a realizar y los operandos involucrados.</li>
+            <li><strong>Execute (ejecución):</strong> Se ejecuta la operación correspondiente (cálculo, movimiento,
+                comparación, salto, etc.).</li>
+        </ol>
+        <img src="../img/unidad2/fetch-decode-execute.png" alt="Ciclo Fetch-Decode-Execute"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <h3>2.3.2 Segmentación de instrucciones</h3>
+        <p>
+            La segmentación, o pipelining, es una técnica que permite ejecutar varias instrucciones en diferentes etapas
+            del ciclo al mismo tiempo. Divide el procesamiento en fases como búsqueda, decodificación, ejecución y
+            escritura de resultados.
+        </p>
+        <p>
+            De esta forma, mientras una instrucción se ejecuta, otra puede ser decodificada y otra leída, maximizando el
+            uso del procesador.
+        </p>
+        <img src="../img/unidad2/pipeline-segmentacion.png" alt="Segmentación de instrucciones (Pipeline)"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <h3>2.3.3 Conjunto de instrucciones: características y funciones</h3>
+        <p>
+            El conjunto de instrucciones (ISA) representa las operaciones básicas que puede realizar un procesador. Cada
+            familia de CPU tiene su propio conjunto, como x86, ARM o MIPS. Las instrucciones se clasifican por su
+            funcionalidad:
+        </p>
+        <ul>
+            <li><strong>Aritméticas:</strong> Suma, resta, multiplicación, división.</li>
+            <li><strong>Lógicas:</strong> AND, OR, XOR, NOT.</li>
+            <li><strong>Transferencia de datos:</strong> MOV, LOAD, STORE.</li>
+            <li><strong>Control:</strong> Saltos condicionales e incondicionales (JMP, CALL, RET).</li>
+        </ul>
+        <p>
+            Las instrucciones se componen típicamente de un código de operación (opcode) y operandos.
+        </p>
+        <img src="../img/unidad2/instrucciones-ejemplo.png" alt="Ejemplos de instrucciones CPU"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <h3>2.3.4 Modos de direccionamiento y formatos</h3>
+        <p>
+            Los modos de direccionamiento definen cómo se localizan los operandos de una instrucción. Los más comunes
+            incluyen:
+        </p>
+        <ul>
+            <li><strong>Inmediato:</strong> El operando está incluido en la misma instrucción.</li>
+            <li><strong>Directo:</strong> La instrucción contiene la dirección del operando en memoria.</li>
+            <li><strong>Indirecto:</strong> La instrucción apunta a una dirección que a su vez contiene otra dirección.
+            </li>
+            <li><strong>Por registro:</strong> El operando se encuentra en un registro.</li>
+            <li><strong>Indexado:</strong> Se suma un desplazamiento a una dirección base o a un registro índice.</li>
+        </ul>
+        <p>
+            El formato de instrucción se refiere a la manera en que se distribuyen los campos dentro de la instrucción
+            binaria, como el opcode, los registros fuente y destino, y los valores inmediatos.
+        </p>
+        <img src="../img/unidad2/modos-direccionamiento.png" alt="Modos de direccionamiento y formatos"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="../index.html" class="scroll-button" style="text-decoration: none;">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../img/logo-tec.png" alt="Logo ITS" />
+        <p>Yoshio Alberto González Padilla</p>
+        <p>Contacto: <a href="mailto:l22051257@saltillo.tecnm.mx">l22051257@saltillo.tecnm.mx</a></p>
+        <p>&copy; 2025 - Instituto Tecnológico de Saltillo</p>
+    </footer>
+</body>
+
+</html>

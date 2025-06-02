@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.2 Estructura de registros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="hero" style="height: auto; padding: 2rem 1rem;">
+        <div class="overlay">
+            <h1>2.2 Estructura de registros</h1>
+            <p>Clasificación, funciones y organización real de los registros del procesador.</p>
+        </div>
+    </header>
+
+    <main style="padding: 2rem; text-align: justify;">
+        <h2>2.2 Estructura de registros</h2>
+        <p>
+            Los registros son pequeñas memorias internas de alta velocidad dentro del procesador, utilizadas para
+            almacenar temporalmente datos e instrucciones. Son fundamentales para el funcionamiento eficiente del CPU,
+            ya que permiten realizar operaciones sin necesidad de acceder constantemente a la memoria principal.
+        </p>
+
+        <h3>2.2.1 Registros visibles para el usuario</h3>
+        <p>
+            Son aquellos que pueden ser manipulados directamente por el programador a través de instrucciones. Se
+            clasifican en:
+        </p>
+        <ul>
+            <li><strong>Registros de datos:</strong> Almacenan valores numéricos o lógicos temporales utilizados durante
+                las operaciones.</li>
+            <li><strong>Registros de direcciones:</strong> Guardan direcciones de memoria que apuntan a los datos o
+                instrucciones.</li>
+            <li><strong>Registros de propósito general:</strong> Utilizados en múltiples tipos de operaciones sin una
+                función específica.</li>
+            <li><strong>Registros de propósito específico:</strong> Incluyen el contador de programa (PC), el puntero de
+                pila (SP), y el registro de instrucción (IR).</li>
+        </ul>
+
+        <h3>2.2.2 Registros de control y de estados</h3>
+        <p>
+            Estos registros no son accesibles directamente por el usuario, pero son fundamentales para el control del
+            funcionamiento interno del CPU.
+        </p>
+        <ul>
+            <li><strong>Registro de estado (Flags):</strong> Indica resultados de operaciones, como bandera de cero,
+                signo, acarreo, desbordamiento, etc.</li>
+            <li><strong>Registro de control:</strong> Configura el modo de operación, privilegios, interrupciones
+                habilitadas o deshabilitadas, entre otros.</li>
+        </ul>
+        <p>
+            Las banderas (flags) se usan para tomar decisiones de flujo en el programa, como en instrucciones
+            condicionales o saltos.
+        </p>
+        <img src="../img/unidad2/registros-control.png" alt="Registros de control y estado"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <h3>2.2.3 Ejemplos de organización de registros de CPU reales</h3>
+        <p>
+            Los diferentes procesadores utilizan estructuras de registros distintas. Algunos ejemplos:
+        </p>
+        <ul>
+            <li><strong>Intel x86:</strong> Registros AX, BX, CX, DX (de 16 bits), EAX, EBX, ECX, EDX (de 32 bits), RAX,
+                RBX... (en x64).</li>
+            <li><strong>ARM:</strong> Utiliza registros R0 a R15, siendo R13 el puntero de pila (SP), R14 el enlace (LR)
+                y R15 el contador de programa (PC).</li>
+            <li><strong>Otros:</strong> Algunos microcontroladores usan registros como W (en PIC) o acumuladores
+                especiales.</li>
+        </ul>
+        <p>
+            En las arquitecturas modernas, los registros están organizados para soportar operaciones SIMD, instrucciones
+            vectoriales o flotantes, como los registros XMM en Intel o NEON en ARM.
+        </p>
+        <img src="../img/unidad2/registro-arm-x86.png" alt="Ejemplos de registros en ARM y x86"
+            style="width: 80%; margin: 1rem auto; display: block;" />
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="../index.html" class="scroll-button" style="text-decoration: none;">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../img/logo-tec.png" alt="Logo ITS" />
+        <p>Yoshio Alberto González Padilla</p>
+        <p>Contacto: <a href="mailto:l22051257@saltillo.tecnm.mx">l22051257@saltillo.tecnm.mx</a></p>
+        <p>&copy; 2025 - Instituto Tecnológico de Saltillo</p>
+    </footer>
+</body>
+
+</html>
